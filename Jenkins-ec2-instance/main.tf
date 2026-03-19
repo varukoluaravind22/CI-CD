@@ -1,7 +1,7 @@
 resource "aws_instance" "web" {
   ami           = "ami-07216ac99dc46a187"
   instance_type = "t2.large"
-  vpc_security_group_ids = [aws_security_group.jenkin-vm-sg]
+  vpc_security_group_ids = [aws_security_group.jenkin-vm-sg.id]
   key_name = "cicd-key"
   tags = {
     Name = "CI-CD-SONARQUBE-JENKINS"
