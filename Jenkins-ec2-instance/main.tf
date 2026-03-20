@@ -3,7 +3,7 @@ resource "aws_instance" "web" {
   instance_type = "t2.large"
   vpc_security_group_ids = [aws_security_group.jenkin-vm-sg.id]
   key_name = "devops"
-  user_data = templatefile("./install.sh", {})
+  user_data = file("./install.sh")
   tags = {
     Name = "CI-CD-SONARQUBE-JENKINS"
   }
