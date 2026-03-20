@@ -1,7 +1,11 @@
 #!/bin/bash
 
 sudo apt update -y
+sudo apt install zip -y
+sudo apt install unzip -y
+sudo apt install tar -y 
 sudo apt install openjdk-17-jdk -y
+
 
 version=$(java -version 2>&1)
 echo "Java is installed: $version"
@@ -55,7 +59,20 @@ docker run -dt --name sonarqube -p 9000:9000 sonarqube:latest
 
 echo "sonarqube is running on port 9000"
 
+echo "Trivy installation started........"
+
+TRIVY_VERSION=$(curl -s "https://api.github.com/repos/aquasecurity/trivy/releases/latest" | grep -Po '"tag_name": "v\K[0-9.]+')
+
+wget -qO trivy.tar.gz https://github.com/aquasecurity/trivy/releases/latest/download/trivy_${TRIVY_VERSION}_Linux-64bit.tar.gz
+
+sudo tar xf trivy.tar.gz -C /usr/local/bin trivy
+
+TrivyVersion=$(trivy --version 2>&1)
+echo "Trivy is installed : $TrivyVersion)"
+
 #upgradation of java version:
 #sudo apt install openjdk-21-jdk -y        #--installation of java 21
 #sudo update-alternatives --config java    #--- to switch the versions
 #readlink -f $(which java)                 #--- to see which jdk is running 
+
+
