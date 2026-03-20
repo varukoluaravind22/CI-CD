@@ -10,7 +10,7 @@ resource "aws_instance" "web" {
   root_block_device {
     volume_size = 30
   }
-}
+
 
 resource "aws_security_group" "jenkin-vm-sg" {
   name        = "jenkin-vm-sg"
@@ -39,4 +39,5 @@ resource "aws_security_group" "jenkin-vm-sg" {
   tags = {
     Name = "jenkin-vm-sg"
   }
+}
 }
