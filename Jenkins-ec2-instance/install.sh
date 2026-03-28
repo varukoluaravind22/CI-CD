@@ -54,7 +54,11 @@ sudo systemctl status docker
 
 DockerVersion=$(docker --version 2>&1)
 echo "jenkins is installed : $DockerVersion"
+sudo usermod -aG docker jenkins
+newgrp docker
+sudo systemctl restart jenkins
 
+sudo gpasswd -a jenkins ubuntu
 docker run -dt --name sonarqube -p 9000:9000 sonarqube:latest
 
 echo "sonarqube is running on port 9000"
