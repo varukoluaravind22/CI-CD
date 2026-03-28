@@ -20,7 +20,7 @@ resource "aws_security_group" "Monitoring-sec-group" {
             description =" inbound rules"
             from_port = port
             to_port = port
-            protocol = tcp
+            protocol = "tcp"
             cidr_blocks = ["0.0.0.0/0"]
             ipv6_cidr_blocks = []
             prefix_list_ids = []
