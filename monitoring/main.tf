@@ -1,7 +1,7 @@
 resource "aws_instance" "observability" {
     ami           = "ami-07216ac99dc46a187"
     instance_type = "t2.large"
-    security_groups = [aws_security_group.Monitoring-sec-group.id]
+    vpc_security_group_ids = [aws_security_group.Monitoring-sec-group.id]
     key_name = "devops"
     user_data = templatefile("./install.sh",{})
     tags ={
