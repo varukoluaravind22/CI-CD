@@ -5,7 +5,7 @@ resource "aws_instance" "observability" {
     key_name = "devops"
     user_data = templatefile("./install.sh",{})
     tags ={
-        name= "Monitoring-server"
+        Name= "Monitoring-server"
     }
     root_block_device {
       volume_size = 30
