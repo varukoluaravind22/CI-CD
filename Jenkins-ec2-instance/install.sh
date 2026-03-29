@@ -1,6 +1,5 @@
 #!/bin/bash
-set -x
-exec > /var/log/user-data.log 2>&1
+
 sudo apt update -y
 sudo apt install zip -y
 sudo apt install unzip -y
@@ -47,7 +46,7 @@ EOF
 
 sudo apt update -y
 
-sudo apt install docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
+sudo apt install docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin -y
 
 sudo systemctl enable docker
 sudo systemctl start docker
