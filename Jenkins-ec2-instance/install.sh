@@ -4,7 +4,7 @@ sudo apt update -y
 sudo apt install zip -y
 sudo apt install unzip -y
 sudo apt install tar -y 
-sudo apt install openjdk-17-jdk -y
+sudo apt install -y openjdk-21-jdk 
 
 
 version=$(java -version 2>&1)
@@ -30,7 +30,7 @@ sudo apt remove $(dpkg --get-selections docker.io docker-compose docker-compose-
 
 # Add Docker's official GPG key:
 sudo apt update -y 
-sudo apt install ca-certificates curl
+sudo apt install -y ca-certificates curl
 sudo install -m 0755 -d /etc/apt/keyrings
 sudo curl -fsSL https://download.docker.com/linux/ubuntu/gpg -o /etc/apt/keyrings/docker.asc
 sudo chmod a+r /etc/apt/keyrings/docker.asc
