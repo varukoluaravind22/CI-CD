@@ -1,13 +1,13 @@
-data "local_file" "intall_script"{
+data "local_file" "install_script"{
   filename = "install.sh"
 }
 
 resource "aws_instance" "web" {
-  ami           = "ami-07216ac99dc46a187"
+  ami           = "ami-0f5ee92e2d63afc18"
   instance_type = "t2.large"
   vpc_security_group_ids = [aws_security_group.jenkin-vm-sg.id]
   key_name = "devops"
-  user_data = data.local_file.intall_script.content
+  user_data = data.local_file.install_script.content
   tags = {
     Name = "CI-CD-SONARQUBE-JENKINS"
   }
