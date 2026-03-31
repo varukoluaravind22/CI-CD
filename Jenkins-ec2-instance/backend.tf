@@ -1,7 +1,7 @@
 #create bucker 
 
 resource "aws_s3_bucket" "mybucket"{
-    bucket = "Mys3bucketforstatefile"
+    bucket = "mys3bucketforstatefile"
     versioning{
         enabled = true 
     }
