@@ -22,9 +22,9 @@ resource "aws_s3_bucket_server_side_encryption_configuration" "mybucketenc" {
 resource "aws_dynamodb_table" "statelock" {
   name = "state-lock"
   billing_mode = "PAY_PER_REQUEST"
-  hash_key = "LOCKID"
+  hash_key = "LockID"
   attribute {
-    name="LOCKID"
+    name="LockID"
     type = "S"
   }
-}
+} 
