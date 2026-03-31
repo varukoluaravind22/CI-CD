@@ -23,6 +23,6 @@ resource "aws_dynamodb_table" "statelock" {
   hash_key = "LOCKID"
   attribute {
     name="LOCKID"
-    type = "s"
+    type = "S"
   }
 }
