@@ -1,7 +1,7 @@
 #create bucker 
 
 resource "aws_s3_bucket" "mybucket"{
-    bucket = "mys3bucketforstatefile"
+    bucket = "mys3bucketforstatefile-1226"
 }
 resource "aws_s3_bucket_versioning" "mybuckeversion" {
   bucket = aws_s3_bucket.mybucket.id
