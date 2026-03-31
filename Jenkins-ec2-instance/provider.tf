@@ -1,12 +1,4 @@
-terraform {
-  backend "s3" {
-    bucket = "mys3bucketforstatefile1"
-    dynamodb_table = "state-lock"
-    key = "Global/mystatefile/terraform.tfstate"
-    region="ap-south-1"
-    encrypt = true
-  }
-}
+
 
 terraform {
   required_providers {
