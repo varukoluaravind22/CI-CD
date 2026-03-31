@@ -53,9 +53,11 @@ sudo systemctl start docker
 sudo systemctl status docker
 
 DockerVersion=$(docker --version 2>&1)
-echo "jenkins is installed : $DockerVersion"
-sudo usermod -aG docker jenkins
+echo "Docker is installed : $DockerVersion"
+sudo usermod -aG docker ubuntu
 newgrp docker
+sudo usermod -aG docker jenkins 
+
 sudo systemctl restart jenkins
 
 sudo gpasswd -a jenkins ubuntu
