@@ -1,3 +1,4 @@
+
 data "local_file" "install_script"{
   filename = "install.sh"
 }
